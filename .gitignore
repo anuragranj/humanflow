@@ -1,0 +1,7 @@
+models_old/*
+peopleDetector/*
+evaluations/*
+checkpoint/*
+*.svg
+*.dot
+main.sh
