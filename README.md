@@ -46,7 +46,7 @@ flow = humanflownet:forward(im1, im2)
 th main.lua -netType fullBodyModel -nGPU 4 -nDonkeys 16 -LR 1e-6 -epochSize 1000 -data <PATH_TO_DATASET> -trainFile <LIST_OF_TRAINING_SAMPLES.txt> -valFile <LIST_OF_VALIDATION_SAMPLES>
 ```
 
-<a name"references"></a>
+<a name="references"></a>
 ## References
 
 1. Training code is based on [anuragranj/spynet.](https://github.com/anuragranj/spynet)
