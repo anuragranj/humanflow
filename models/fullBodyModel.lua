@@ -1,3 +1,9 @@
+-- Copyright 2018 Anurag Ranjan and the Max Planck Gesellschaft.
+-- All rights reserved.
+-- This software is provided without any warranty.
+-- By using this software you agree to the terms of the license file
+-- in the root folder.
+
 require 'nn'
 require 'nngraph'
 require 'cunn'
@@ -107,12 +113,3 @@ if opt.nGPU>0 then
 end
 
 return model
-
-
-
-
-
-
-
-
-

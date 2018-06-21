@@ -1,3 +1,8 @@
+-- Copyright 2018 Anurag Ranjan and the Max Planck Gesellschaft.
+-- All rights reserved.
+-- This software is provided without any warranty.
+-- By using this software you agree to the terms of the license file
+-- in the root folder.
 --
 --  Copyright (c) 2014, Facebook, Inc.
 --  All rights reserved.
@@ -169,7 +174,7 @@ function trainBatch(inputsCPU, flowsCPU)
 
 
    local errF1, errF2, errF3, errF4, outputs
-  
+
    feval = function(x)
       model:zeroGradParameters()
 
@@ -178,7 +183,7 @@ function trainBatch(inputsCPU, flowsCPU)
       errF2 = criterion2:forward(outputs[2], flows2)
       errF3 = criterion3:forward(outputs[3], flows3)
       errF4 = criterion4:forward(outputs[4], flows4)
-      
+
       local flowGradOutputs1 = criterion1:backward(outputs[1], flows1)
       local flowGradOutputs2 = criterion2:backward(outputs[2], flows2)
       local flowGradOutputs3 = criterion3:backward(outputs[3], flows3)
@@ -194,7 +199,7 @@ function trainBatch(inputsCPU, flowsCPU)
    if model.needsSync then
       model:syncParameters()
    end
-   
+
 
    cutorch.synchronize()
    batchNumber = batchNumber + 1

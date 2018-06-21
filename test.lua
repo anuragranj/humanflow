@@ -1,3 +1,8 @@
+-- Copyright 2018 Anurag Ranjan and the Max Planck Gesellschaft.
+-- All rights reserved.
+-- This software is provided without any warranty.
+-- By using this software you agree to the terms of the license file
+-- in the root folder.
 --
 --  Copyright (c) 2014, Facebook, Inc.
 --  All rights reserved.
@@ -85,7 +90,7 @@ function testBatch(inputsCPU, flowsCPU)
    local errF2 = criterion2:forward(outputs[2], flows2)
    local errF3 = criterion3:forward(outputs[3], flows3)
    local errF4 = criterion4:forward(outputs[4], flows4)
-   
+
    cutorch.synchronize()
    --local pred = outputs:float()
 

@@ -1,3 +1,8 @@
+-- Copyright 2018 Anurag Ranjan and the Max Planck Gesellschaft.
+-- All rights reserved.
+-- This software is provided without any warranty.
+-- By using this software you agree to the terms of the license file
+-- in the root folder.
 --
 --  Copyright (c) 2014, Facebook, Inc.
 --  All rights reserved.
@@ -27,7 +32,7 @@ function M.parse(arg)
     ------------- Data options ------------------------
     cmd:option('-nDonkeys',        4, 'number of donkeys to initialize (data loading threads)')
     ------------- Training options --------------------
-    cmd:option('-augment',         1,     'augment the data')   
+    cmd:option('-augment',         1,     'augment the data')
     cmd:option('-nEpochs',         1000,    'Number of total epochs to run')
     cmd:option('-epochSize',       1000, 'Number of batches per epoch')
     cmd:option('-epochNumber',     1,     'Manual epoch number (useful on restarts)')

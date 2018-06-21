@@ -1,3 +1,8 @@
+-- Copyright 2018 Anurag Ranjan and the Max Planck Gesellschaft.
+-- All rights reserved.
+-- This software is provided without any warranty.
+-- By using this software you agree to the terms of the license file
+-- in the root folder.
 --
 --  Copyright (c) 2016, Facebook, Inc.
 --  All rights reserved.
@@ -211,7 +216,7 @@ end
 
 local function grayscale(dst, img)
    assert(img:size(1)==3)
-   
+
    dst[1]:zero()
    dst[1]:add(0.299, img[1]):add(0.587, img[2]):add(0.114, img[3])
    dst[2]:copy(dst[1])
