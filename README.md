@@ -1,6 +1,5 @@
 # Learning Human Optical Flow
 This code is based on the paper [Learning Human Optical Flow](https://arxiv.org/abs/1806.05666).
-### We will release the code soon.
 
 * [Data:](#data)  Downloading the data
 * [Trained Models:](#models)  Downloading the trained models
@@ -11,11 +10,11 @@ This code is based on the paper [Learning Human Optical Flow](https://arxiv.org/
 
 <a name="data"></a>
 ## Data
-We are working releasing the training data soon.
+### We are working releasing the training data soon.
 
 <a name="models"></a>
 ## Data
-We are working releasing the trained models soon.
+### We are working releasing the trained models soon.
 
 <a name="setUp"></a>
 ## Setup
