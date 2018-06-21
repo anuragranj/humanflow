@@ -13,7 +13,7 @@ This code is based on the paper [Learning Human Optical Flow](https://arxiv.org/
 ### We are working releasing the training data soon.
 
 <a name="models"></a>
-## Data
+## Trained Models
 ### We are working releasing the trained models soon.
 
 <a name="setUp"></a>
