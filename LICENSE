@@ -3,9 +3,10 @@ MIT License
 Copyright (c) 2018 Anurag Ranjan and the Max Planck Gesellschaft
 
 Ownership
-The Model has been developed at the Max Planck Institute for Intelligent Systems 
+The Model, Data and Code contained within or linked to this repository
+has been developed at the Max Planck Institute for Intelligent Systems
 (hereinafter "MPI") and is owned by and proprietary material of the Max-Planck-Gesellschaft
-zur Förderung der Wissenschaften e.V. (hereinafter “MPG”; MPI and MPG hereinafter 
+zur Förderung der Wissenschaften e.V. (hereinafter “MPG”; MPI and MPG hereinafter
 collectively “Max-Planck”).
 
 License Grant
@@ -20,6 +21,8 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+WARRANTY
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -29,10 +32,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Publication
-You agree to cite the papers describing the model as specified on the download website. 
+You agree to cite the papers describing the model as specified on the download website.
 This website lists the most up to date bibliographic information on the about page.
 
 Media projects
-When using the Model in a media project please give credit to Max Planck Institute for 
+When using the Model in a media project please give credit to Max Planck Institute for
 Intelligent Systems. For example: HumanFlow was used for optical flow estimation courtesy
 of the Max Planck Institute for Intelligent Systems.

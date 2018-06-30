@@ -10,11 +10,19 @@ This code is based on the paper [Learning Human Optical Flow](https://arxiv.org/
 
 <a name="data"></a>
 ## Data
-### We are working releasing the training data soon.
+Download the extract the data.
+
+```bash
+for i in `seq -w 1 56`; do wget http://humanflow.is.tuebingen.mpg.de/HumanFlowDataset.7z.0$i -c; done ;
+7z x HuamnFlowDataset.7z.001
+```
+Alternately, you can download from the [webpage](http://humanflow.is.tuebingen.mpg.de/).
 
 <a name="models"></a>
 ## Trained Models
-### We are working releasing the trained models soon.
+The pretrained models are available in `pretrained/` directory. There are two models:
+1. `human_flow_model.t7` is the original trained model as evaluated in the paper.
+2. `human_flow_model_noise_adaptive.t7` is trained with additional noisy data.
 
 <a name="setUp"></a>
 ## Setup
@@ -31,19 +39,22 @@ luarocks make
 ## Usage
 #### Load the model
 ```lua
-humanflownet = torch.load(<MODEL_PATH>):cuda()
+stn = require 'stn'
+bodynet = require 'bodynet'
+easyComputeFlow = bodynet.easy_setup('pretrained/human_flow_model_[noise_adaptive].t7'):cuda()
 ```
 #### Load images and compute flow
 ```lua
-im1 = image.load(<IMAGE_PATH_1>)
-im2 = image.load(<IMAGE_PATH_2>)
-flow = humanflownet:forward(im1, im2)
+im1 = image.load(<IMAGE_PATH_1>, 3, 'float')
+im2 = image.load(<IMAGE_PATH_2>, 3, 'float')
+flow = easyComputeFlow(im1, im2)
 ```
+To save or visualize optical flow, refer to `flowExtensions.lua`
 
 <a name="training"></a>
 ## Training
 ```bash
-th main.lua -netType fullBodyModel -nGPU 4 -nDonkeys 16 -LR 1e-6 -epochSize 1000 -data <PATH_TO_DATASET> -trainFile <LIST_OF_TRAINING_SAMPLES.txt> -valFile <LIST_OF_VALIDATION_SAMPLES>
+th main.lua -netType fullBodyModel -nGPU 4 -nDonkeys 16 -LR 1e-6 -epochSize 1000 -data <PATH_TO_DATASET>
 ```
 
 <a name="references"></a>
@@ -51,6 +62,7 @@ th main.lua -netType fullBodyModel -nGPU 4 -nDonkeys 16 -LR 1e-6 -epochSize 1000
 
 1. Training code is based on [anuragranj/spynet.](https://github.com/anuragranj/spynet)
 2. Warping code is based on [qassemoquab/stnbhwd.](https://github.com/qassemoquab/stnbhwd)
+3. Additional training data can be found at [gulvarol/surreal.](https://github.com/gulvarol/surreal)
 
 ## License
 MIT License, free usage without any warranty. Check LICENSE file for details.
