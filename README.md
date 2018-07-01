@@ -14,7 +14,7 @@ Download the extract the data.
 
 ```bash
 for i in `seq -w 1 56`; do wget http://humanflow.is.tuebingen.mpg.de/HumanFlowDataset.7z.0$i -c; done ;
-7z x HuamnFlowDataset.7z.001
+7z x HumanFlowDataset.7z.001
 ```
 Alternately, you can download from the [webpage](http://humanflow.is.tuebingen.mpg.de/).
 
