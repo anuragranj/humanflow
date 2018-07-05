@@ -41,7 +41,7 @@ luarocks make
 ```lua
 stn = require 'stn'
 bodynet = require 'bodynet'
-easyComputeFlow = bodynet.easy_setup('pretrained/human_flow_model_[noise_adaptive].t7'):cuda()
+easyComputeFlow = bodynet.easy_setup('pretrained/human_flow_model_[noise_adaptive].t7')
 ```
 #### Load images and compute flow
 ```lua

@@ -1,7 +1,7 @@
 -- Copyright 2016 Anurag Ranjan and the Max Planck Gesellschaft.
 -- All rights reserved.
--- This software is provided for research purposes only.  
--- By using this software you agree to the terms of the license file 
+-- This software is provided for research purposes only.
+-- By using this software you agree to the terms of the license file
 -- in the root folder.
 -- For commercial use, please contact ps-license@tue.mpg.de.
 
@@ -56,14 +56,14 @@ end
 M.getTrainValidationSplits = getTrainValidationSplits
 
 local function loadFlow(filename)
-  TAG_FLOAT = 202021.25 
+  TAG_FLOAT = 202021.25
   local ff = torch.DiskFile(filename):binary()
   local tag = ff:readFloat()
   if tag ~= TAG_FLOAT then
     xerror('unable to read '..filename..
      ' perhaps bigendian error','readflo()')
   end
-   
+
   local w = ff:readInt()
   local h = ff:readInt()
   local nbands = 2
@@ -71,7 +71,7 @@ local function loadFlow(filename)
   ff:readFloat(tf:storage())
   ff:close()
 
-  local flow = tf:permute(3,1,2):clone()  
+  local flow = tf:permute(3,1,2):clone()
   return flow
 end
 M.loadFlow = loadFlow
@@ -99,9 +99,9 @@ local easyComputeFlow = function(im1, im2)
 
   local width = imgs:size(3)
   local height = imgs:size(2)
-  
+
   local fineWidth, fineHeight
-  
+
   if (width%32 == 0 and width <=512) then
     fineWidth = width
   else
@@ -112,14 +112,14 @@ local easyComputeFlow = function(im1, im2)
     fineHeight = height
   else
     fineHeight = math.min(512, height - math.fmod(height, 32))
-  end  
-       
+  end
+
   imgs = image.scale(imgs, fineWidth, fineHeight)
 
   imgs = imgs:resize(1,6,imgs:size(2),imgs:size(3)):cuda()
   local flow_est = model:forward(imgs)
   local flow_est_256 = flow_est[4]:squeeze():float()
-  
+
   flow_est_256 = DeAdjustFlow(flow_est_256, height, width)
 
   return flow_est_256
@@ -133,6 +133,7 @@ local function easy_setup(modelpath)
   if torch.type(model) == 'nn.DataParallelTable' then
      model = model:get(1)
   end
+  model = model:cuda()
   model:evaluate()
 
   return easyComputeFlow
