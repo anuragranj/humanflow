@@ -117,7 +117,7 @@ local easyComputeFlow = function(im1, im2)
   imgs = image.scale(imgs, fineWidth, fineHeight)
 
   imgs = imgs:resize(1,6,imgs:size(2),imgs:size(3)):cuda()
-  local flow_est = model:forward(imgs)
+  local flow_est = -model:forward(imgs)       -- negetive fixes the coordinates for flow representation
   local flow_est_256 = flow_est[4]:squeeze():float()
 
   flow_est_256 = DeAdjustFlow(flow_est_256, height, width)
