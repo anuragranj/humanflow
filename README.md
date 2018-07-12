@@ -18,7 +18,7 @@ for i in `seq -w 1 56`; do wget http://humanflow.is.tuebingen.mpg.de/HumanFlowDa
 ```
 Alternately, you can download from the [webpage](http://humanflow.is.tuebingen.mpg.de/).
 
-*NOTE:* The directions of flow fields in `.flo` files are reversed from the original convention. So, it is required to either change the sign of flow fields either while training, or while prediction if you would like to stick to original convention of [Middlebury](http://vision.middlebury.edu/flow/). We train the network using original data and change the sign while prediction. If this is not clear, please raise a Github issue or write me an email.
+**NOTE:** The directions of flow fields in `.flo` files are reversed from the original convention. So, it is required to either change the sign of flow fields either while training, or while prediction if you would like to stick to original convention of [Middlebury](http://vision.middlebury.edu/flow/). We train the network using original data and change the sign while prediction. If this is not clear, please raise a Github issue or write me an email.
 
 <a name="models"></a>
 ## Trained Models
