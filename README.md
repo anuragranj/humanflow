@@ -70,4 +70,4 @@ th main.lua -netType fullBodyModel -nGPU 4 -nDonkeys 16 -LR 1e-6 -epochSize 1000
 MIT License, free usage without any warranty. Check LICENSE file for details.
 
 ## Citing this code
-Ranjan, Anurag, Javier Romero, and Michael J. Black. "Learning Human Optical Flow." arXiv preprint arXiv:1806.05666 (2018).
+Ranjan, Anurag, Javier Romero, and Michael J. Black. "Learning Human Optical Flow." British Machine Vision Conference (BMVC 2018).
