@@ -10,13 +10,12 @@ This code is based on the paper [Learning Human Optical Flow](https://arxiv.org/
 
 <a name="data"></a>
 ## Data
-Download the extract the data.
+Download the data from [webpage](http://humanflow.is.tuebingen.mpg.de/).
+Extract the data.
 
 ```bash
-for i in `seq -w 1 56`; do wget http://humanflow.is.tuebingen.mpg.de/HumanFlowDataset.7z.0$i -c; done ;
 7z x HumanFlowDataset.7z.001
 ```
-Alternately, you can download from the [webpage](http://humanflow.is.tuebingen.mpg.de/).
 
 **NOTE:** The directions of flow fields in `.flo` files are reversed from the original convention. So, it is required to either change the sign of flow fields either while training, or while prediction if you would like to stick to original convention of [Middlebury](http://vision.middlebury.edu/flow/). We train the network using original data and change the sign while prediction. If this is not clear, please raise a Github issue or write me an email.
 
